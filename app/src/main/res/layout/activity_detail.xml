@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.fragments.DetailActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_image"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/rounded_bottom">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_japanese_home"
+            android:scaleType="centerCrop"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/_2040_sqft"
+        app:layout_constraintTop_toBottomOf="@id/cv_image"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp"
+        android:textStyle="bold"
+        android:textColor="@color/md_theme_primaryFixedDim"/>
+    <TextView
+        android:id="@id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$3,213"
+        app:layout_constraintTop_toBottomOf="@id/tv_area"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:textSize="32dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="/month"
+        android:textColor="@color/md_theme_primaryFixedDim"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/tv_price"
+        app:layout_constraintTop_toBottomOf="@id/tv_area"
+        android:paddingBottom="8dp"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tv_additional"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_price"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/md_theme_primaryFixedDim"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="326 Palace Road, Japan" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose the type of button based on the importance of the action. The more important the action is, the more emphasis on the button.
+Buttons should have clear labels to indicate the action they perform.
+Place buttons logically on the screen—where users likely expect to find them.
+Don't overuse buttons. Too many buttons on a screen disrupt the visual hierarchy.
+"
+        app:layout_constraintTop_toBottomOf="@id/tv_additional"
+        android:layout_marginHorizontal="16dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

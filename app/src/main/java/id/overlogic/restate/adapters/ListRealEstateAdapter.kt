@@ -7,6 +7,17 @@ import id.overlogic.restate.databinding.ItemRestateBinding
 import id.overlogic.restate.models.RealEstate
 
 class ListRealEstateAdapter(private val listRealEstate: ArrayList<RealEstate>): RecyclerView.Adapter<ListRealEstateAdapter.ListViewHolder>() {
+
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClick(data: RealEstate)
+    }
+
     class ListViewHolder(val binding: ItemRestateBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(
@@ -22,6 +33,10 @@ class ListRealEstateAdapter(private val listRealEstate: ArrayList<RealEstate>): 
         holder.binding.tvPrice.text = "\$${price}"
         holder.binding.tvArea.text = "${area} sqft"
         holder.binding.tvRating.text = "$rating ⭐"
+
+        holder.itemView.setOnClickListener {
+            onItemClickCallback.onItemClick(listRealEstate[holder.adapterPosition])
+        }
     }
 
     override fun getItemCount(): Int = listRealEstate.size

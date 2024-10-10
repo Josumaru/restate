@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Restate"
         tools:targetApi="31">
         <activity
+            android:name=".views.fragments.DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.fragments.DashboardPage"
             android:exported="false" />
         <activity

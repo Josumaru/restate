@@ -1,5 +1,6 @@
 package id.overlogic.restate.views.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -45,7 +46,7 @@ class HomeFragment : Fragment() {
                 75,
                 "Luxury Apartement",
                 "https://example.com/image1.jpg",
-                5.7
+                4.2
             )
         )
         realEstates.add(
@@ -66,6 +67,15 @@ class HomeFragment : Fragment() {
         binding.rvRealEstate.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         val listRealEstateAdapter = ListRealEstateAdapter(listRealEstate)
         binding.rvRealEstate.adapter = listRealEstateAdapter
+
+        listRealEstateAdapter.setOnItemClickCallback(object: ListRealEstateAdapter.OnItemClickCallback {
+            override fun onItemClick(data: RealEstate) {
+                val intent = Intent(requireContext(), DetailActivity::class.java)
+                intent.putExtra(DetailActivity.EXTRA_REAL_ESTATE, data)
+                startActivity(intent)
+            }
+
+        })
 
     }
 
