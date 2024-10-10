@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Restate</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="archive">Archive</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="welcome_back">Welcome Back 👋</string>
+    <string name="josumaru">Josumaru</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="popular">Popular</string>
+    <string name="popular_property_s">Popular Property</string>
+    <string name="see_all">see all</string>
+    <string name="_2040_sqft">2040 sqft</string>
+    <string name="trending">Trending</string>
+    <string name="buy_sell">Buy/Sell</string>
+    <string name="cheap">Cheap</string>
+</resources>
