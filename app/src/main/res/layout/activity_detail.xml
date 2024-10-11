@@ -1,83 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".views.fragments.DetailActivity">
+    android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cv_image"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:id="@+id/cv_arrow_left"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        app:cardCornerRadius="52dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/rounded_bottom">
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp">
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/img_japanese_home"
-            android:scaleType="centerCrop"/>
+            android:layout_width="42dp"
+            android:layout_gravity="center"
+            android:layout_height="42dp"
+            android:src="@drawable/ic_arrow_left"
+            android:scaleType="centerCrop"
+            app:tint="@color/md_theme_primary" />
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/tv_area"
+    <androidx.cardview.widget.CardView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/_2040_sqft"
-        app:layout_constraintTop_toBottomOf="@id/cv_image"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="16dp"
-        android:textStyle="bold"
-        android:textColor="@color/md_theme_primaryFixedDim"/>
-    <TextView
-        android:id="@id/tv_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="$3,213"
-        app:layout_constraintTop_toBottomOf="@id/tv_area"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
-        android:textSize="32dp"
-        android:textStyle="bold"/>
+        android:paddingBottom="22dp"
+        android:paddingHorizontal="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:layout_marginHorizontal="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="end"
-        android:text="/month"
-        android:textColor="@color/md_theme_primaryFixedDim"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_price"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@id/tv_price"
-        app:layout_constraintTop_toBottomOf="@id/tv_area"
-        android:paddingBottom="8dp"
-        app:layout_constraintVertical_bias="1.0" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="64dp"
+                android:gravity="center"
+                android:layout_height="64dp"
+                app:chipCornerRadius="32dp"
+                android:padding="16dp"
+                app:cardCornerRadius="64dp"
+                app:cardElevation="0dp"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_corner_tertiary"
+                android:layout_marginStart="16dp">
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_gravity="center"
+                    android:layout_height="42dp"
+                    android:src="@drawable/ic_close"/>
+            </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/tv_additional"
+            <androidx.cardview.widget.CardView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                app:chipCornerRadius="32dp"
+                android:padding="16dp"
+                app:cardCornerRadius="64dp"
+                app:cardElevation="0dp"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_corner_tertiary"
+                android:layout_marginStart="16dp">
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_gravity="center"
+                    android:layout_height="42dp"
+                    android:src="@drawable/ic_ankr"/>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:layout_marginVertical="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:padding="16dp"
+                android:text="Book Now"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_price"
-        android:layout_marginStart="16dp"
-        android:textColor="@color/md_theme_primaryFixedDim"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="326 Palace Road, Japan" />
+        android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".views.fragments.DetailActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Choose the type of button based on the importance of the action. The more important the action is, the more emphasis on the button.
-Buttons should have clear labels to indicate the action they perform.
-Place buttons logically on the screen—where users likely expect to find them.
-Don't overuse buttons. Too many buttons on a screen disrupt the visual hierarchy.
-"
-        app:layout_constraintTop_toBottomOf="@id/tv_additional"
-        android:layout_marginHorizontal="16dp"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_image"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/rounded_bottom">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/img_japanese_home"
+                    android:scaleType="centerCrop"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/_2040_sqft"
+                app:layout_constraintTop_toBottomOf="@id/cv_image"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="16dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/md_theme_primaryFixedDim"/>
+            <TextView
+                android:id="@id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$3,213"
+                app:layout_constraintTop_toBottomOf="@id/tv_area"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp"
+                android:textSize="32dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="/month"
+                android:textColor="@color/md_theme_primaryFixedDim"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/tv_price"
+                app:layout_constraintTop_toBottomOf="@id/tv_area"
+                android:paddingBottom="8dp"
+                android:textSize="18sp"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/tv_additional"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_price"
+                android:layout_marginStart="16dp"
+                android:textColor="@color/md_theme_primaryFixedDim"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="326 Palace Road, Japan" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:justificationMode="inter_word"
+                android:text="@string/japanese_description"
+                app:layout_constraintTop_toBottomOf="@id/tv_additional"
+                android:layout_marginHorizontal="16dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
